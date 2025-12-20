@@ -1,12 +1,26 @@
 #from .models import HyperspectralImage
 #from .controllers import HyperspectralController
-from .libs import np, plt, sp, Image   # para acceder a np, plt, sp, Image centralizados
-from .algorithms import RGB
-
+from .libs import (np, 
+                   plt, 
+                   sp, 
+                   Image,
+                   mpimg,
+                   envi,
+                   principal_components,
+                   imshow,
+                   defaultdict)   # Access to np, plt, sp, Image...
+from .algorithms import (RGB,
+                         PCA)
 __all__ = [
-    "np",
-    "plt",
-    "sp",
+    "sp", 
+    "plt", 
+    "np", 
     "Image",
-    "RGB"
+    "mpimg",
+    "envi", 
+    "principal_components", 
+    "imshow", 
+    "defaultdict",
+    "RGB",
+    "PCA"
 ]
