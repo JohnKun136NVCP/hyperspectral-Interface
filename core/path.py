@@ -10,10 +10,12 @@ class getPath:
        #Const elements
        self.__hdr_ext = ".hdr"
        self.__cube_ext = ".cube"
+       self.__float_ext = ".float"
+       self.__csv_ext = ".csv"
     @staticmethod
     def root() -> str:
         return os.getcwd()+'/'
-    def extentionOutput(self, pathFiles: list) -> tuple[list, list]:
+    def extentionOutput(self, pathFiles: list) -> tuple[list, list, list]:
         hdr_path, cube_path = [], []
         for path in pathFiles:
             if not isinstance(path, str):
@@ -25,6 +27,20 @@ class getPath:
             elif extension == self.__cube_ext:
                 cube_path.append(full_path)
         return (hdr_path, cube_path)
+    def SAMInputFiles(self,pathFiles:str) -> tuple[list,list]:
+        hdr_path, float_path, csv_path = [],[],[]
+        for path in os.listdir(pathFiles):
+            full_path = os.path.abspath(path)
+            _,ext = os.path.splitext(path)
+            if ext == self.__hdr_ext:
+                hdr_path.append(full_path)
+            elif ext == self.__float_ext:
+                float_path.append(full_path)
+            elif ext == self.__csv_ext:
+                csv_path.append(full_path)
+        return (hdr_path,float_path,csv_path)
+    def unionPath(self,file_path:str) ->str:
+        return self.root()+file_path
     
     def list_and_order_files_by_mixed_extensions(self, directory_path:str, extensions:list):
         """

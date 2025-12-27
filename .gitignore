@@ -4,6 +4,10 @@ include/
 lib/
 *.cfg
 __pycache__/
+share/
 *.venv
 *.hdr
 *.cube
+*.float
+*.png
+pyvenv.cfg

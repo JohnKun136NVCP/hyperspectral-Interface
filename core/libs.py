@@ -1,6 +1,7 @@
 import spectral as sp
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import polars as pl
 import numpy as np
 from spectral import envi, principal_components, imshow
 from PIL import Image
@@ -14,4 +15,5 @@ __all__ = ["sp",
            "envi", 
            "principal_components", 
            "imshow", 
-           "defaultdict"]
+           "defaultdict",
+           "pl"]

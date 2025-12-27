@@ -8,13 +8,16 @@ from .libs import (np,
                    envi,
                    principal_components,
                    imshow,
-                   defaultdict)   # Access to np, plt, sp, Image...
+                   defaultdict,
+                   pl)   # Access to np, plt, sp, Image...
 from .algorithms import (RGB,
-                         PCA)
+                         PCA,
+                         SAM)
 __all__ = [
     "sp", 
     "plt", 
     "np", 
+    "pl",
     "Image",
     "mpimg",
     "envi", 
@@ -22,5 +25,6 @@ __all__ = [
     "imshow", 
     "defaultdict",
     "RGB",
-    "PCA"
+    "PCA",
+    "SAM"
 ]
